@@ -7,10 +7,12 @@ const shopRoutes = require('./routes/Shop');
 const productRoutes = require('./routes/Product');
 const ordersRoutes = require('./routes/Order');
 require('dotenv').config()
+const cors = require('cors');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
 app.use(bodyParser());
 app.use(shopRoutes);
 app.use(productRoutes);
